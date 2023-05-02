@@ -1,0 +1,11 @@
+<div class="profile-info">
+  <p class="profile-field">Name: <span>{{userData?.firstName}} {{userData?.lastName}}</span></p>
+  <p class="profile-field">Username: <span>{{userData?.username}}</span></p>
+  <p class="profile-field">E-mail: <span>{{userData?.email}}</span></p>
+  <p class="profile-field">Phone num: <span>{{userData?.phoneNumber}}</span></p>
+</div>
+<div class="button-group">
+  <a class="button" routerLink="edit-profile">Edit Profile</a>
+  <a class="button" routerLink="edit-password">Edit Password</a>
+  <a class="button" (click)="logout()">Logout</a>
+</div>

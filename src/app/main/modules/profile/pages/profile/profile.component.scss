@@ -1,0 +1,41 @@
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.profile-field {
+  font-size: 28px;
+  font-weight: 600;
+
+  color: #484848;
+}
+
+.button-group {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.button {
+  width: 420px;
+
+  text-align: center;
+
+  font-size: 34px;
+  text-decoration: underline;
+
+  border: none;
+
+  color: white;
+  background-color: #72B3D8;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #629bbb;
+  }
+}

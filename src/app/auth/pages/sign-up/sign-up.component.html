@@ -1,0 +1,41 @@
+<h2>Sign up</h2>
+<p class="subtitle">
+  Already have an account? <a routerLink="../login">Log in here</a>
+</p>
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <div class="error-list">
+    <span class="error" *ngFor="let error of errors">{{error}}</span>
+  </div>
+
+  <label class="label">
+    <span>Name</span>
+    <input type="text" name="firstName" placeholder="John" formControlName="firstName">
+  </label>
+  <label class="label">
+    <span>Last name</span>
+    <input type="text" name="lastName" placeholder="Smith" formControlName="lastName">
+  </label>
+  <label class="label">
+    <span>Username</span>
+    <input type="text" name="username" placeholder="johnny" formControlName="username">
+  </label>
+  <label class="label">
+    <span>Email</span>
+    <input type="email" name="email" placeholder="gorgeous@gmail.com" formControlName="email">
+  </label>
+  <label class="label">
+    <span>Phone number</span>
+    <input type="tel" name="phoneNumber" placeholder="8 800 555 35 35" formControlName="phoneNumber">
+  </label>
+  <label class="label">
+    <span>Password</span>
+    <input type="password" name="password" placeholder="Create a password" formControlName="password">
+  </label>
+  <label class="label">
+    <span>Re-password</span>
+    <input type="password" name="re_password" placeholder="Enter your password again" formControlName="re_password">
+  </label>
+  <div class="button-group">
+    <button class="button" type="submit">Confirm</button>
+  </div>
+</form>

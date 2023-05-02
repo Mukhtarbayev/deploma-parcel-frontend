@@ -1,0 +1,26 @@
+<header class="header">
+  <nav class="nav">
+    <ul class="nav-list">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../../../assets/img/logo.png" alt="logo">
+        </a>
+      </div>
+      <li class="nav-item" *ngFor="let item of navItems" routerLinkActive="active">
+        <a [routerLink]="item.link">{{item.label}}</a></li>
+      <li class="nav-item"routerLinkActive="active" *ngIf="isAuthorized!.value"><a routerLink="my-cards">My cards</a></li>
+      <li class="nav-item" routerLinkActive="active">
+        <div class="links-group" *ngIf="!isAuthorized!.value; else profileImg">
+          <a routerLink="/auth/sign-up">Sign up</a> /
+          <a routerLink="/auth/login">Log in</a>
+        </div>
+        <ng-template #profileImg>
+          <a routerLink="profile"><img src="../../../../assets/img/profile.png" alt="profile-img"></a>
+        </ng-template>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main class="main">
+  <router-outlet></router-outlet>
+</main>

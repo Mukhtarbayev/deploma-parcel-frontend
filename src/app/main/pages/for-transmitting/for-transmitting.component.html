@@ -1,0 +1,46 @@
+<div class="sub-header">
+  <span>Filters:</span>
+  <label class="label">From:
+    <ng-select
+      [items]="cities"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="fromCity"
+      [clearable]="false"
+      (change)="filterCards()"
+      >
+    </ng-select>
+  </label>
+  <label class="label">To:
+    <ng-select
+      [items]="cities"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="toCity"
+      [clearable]="false"
+      (change)="filterCards()"
+      >
+    </ng-select>
+  </label>
+  <button (click)="resetFilter()">Reset</button>
+  <!-- <label class="label">When:
+    <ng-select
+      [items]="whenOptions"
+      bindLabel="label"
+      bindValue="value"
+      [(ngModel)]="defaultOption"
+      [clearable]="false">
+    </ng-select>
+  </label> -->
+</div>
+<div class="content">
+  <ng-container *ngIf="userCards === null; else empty">
+    Loading...
+  </ng-container>
+
+  <ng-template #empty>
+    <div class="empty" *ngIf="!userCards!.length">No cards here</div>
+  </ng-template>
+  <app-user-card *ngFor="let card of userCards" [data]="card"></app-user-card>
+</div>
+<div class="add-new">+</div>

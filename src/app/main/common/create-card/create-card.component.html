@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Create card</h1>
+<div mat-dialog-content>
+  <form class="form" [formGroup]="formGroup" (ngSubmit)="submit()">
+    <label class="label">
+      Weight
+      <input type="number" name="weight" formControlName="weight">
+    </label>
+    <label class="label">
+      Transport type
+      <ng-select
+        [items]="transportOptions"
+        bindLabel="label"
+        bindValue="value"
+        formControlName="transportType"
+        [clearable]="false">
+      </ng-select>
+    </label>
+    <label class="label">
+      Card type
+      <ng-select
+        [items]="cardTypeOptions"
+        bindLabel="label"
+        bindValue="value"
+        formControlName="cardType"
+        [clearable]="false">
+      </ng-select>
+    </label>
+    <label class="label">
+      From city
+      <ng-select
+        [items]="cities"
+        bindLabel="label"
+        bindValue="value"
+        formControlName="cityFrom"
+        [clearable]="false">
+      </ng-select>
+    </label>
+    <label class="label">
+      To city
+      <ng-select
+        [items]="cities"
+        bindLabel="label"
+        bindValue="value"
+        formControlName="cityTo"
+        [clearable]="false">
+      </ng-select>
+    </label>
+    <label class="label">
+      Arriving Time
+      <input type="datetime-local" name="arrivingTime" formControlName="arrivingTime">
+    </label>
+
+    <button type="submit" class="button">Create</button>
+  </form>
+</div>

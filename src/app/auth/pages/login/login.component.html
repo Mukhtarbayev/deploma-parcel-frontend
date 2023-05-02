@@ -1,0 +1,20 @@
+<h2>Log in</h2>
+<p class="subtitle">
+  Account doesn’t exist? <a routerLink="../sign-up">Register here</a>
+</p>
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+  <label class="label">
+    <span>Username or email</span>
+    <input type="text" name="username" id="username" placeholder="Enter your username or email" formControlName="username">
+  </label>
+  <label class="label">
+    <span>Password</span>
+    <input type="password" name="password" id="password" placeholder="Enter your password" formControlName="password">
+  </label>
+  <div class="button-group">
+    <button class="button">Log in</button>
+  </div>
+  <p class="subtitle">
+    Forgot your password? <a routerLink="../password-recovery">Restore it here</a>
+  </p>
+</form>

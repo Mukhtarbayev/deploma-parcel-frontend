@@ -1,0 +1,22 @@
+<div class="content">
+  <ng-container *ngIf="!isAuthorized!.value; else auth">
+    <div>
+      Authorization needed!
+    </div>
+  </ng-container>
+
+  <ng-template #auth>
+    <ng-container *ngIf="myCards === null; else empty">
+      <div>
+        Loading...
+      </div>
+    </ng-container>
+
+    <ng-template #empty>
+      <div class="empty" *ngIf="!myCards!.length">No cards here</div>
+    </ng-template>
+    <app-my-card *ngFor="let card of myCards" [data]="card" (onDelete)="updateCardList()" (onUpdate)="updateCardList()"></app-my-card>
+    <div class="new-card" (click)="openDialog()" *ngIf="myCards !== null">+</div>
+  </ng-template>
+
+</div>

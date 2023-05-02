@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{data.userName}}</h1>
+<div mat-dialog-content>
+  <img src="../../../../assets/img/profile.png" alt="profile">
+  <p>From: {{data.cityFrom}}</p>
+  <p>To: {{data.cityTo}}</p>
+  <p>When: {{data!.arrivingTime | date: 'dd.MM.yyyy'}}</p>
+  <p>Flight time: {{data!.arrivingTime | date: 'h:mm'}}</p>
+  <p>Max weight: {{data.weight}}</p>
+  <p>Phone Number: {{data.phoneNumber}}</p>
+</div>

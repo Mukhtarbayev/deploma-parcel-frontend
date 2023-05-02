@@ -1,0 +1,75 @@
+<div class="card-body" [class.edit]="isEdit">
+  <ng-container *ngIf="!isEdit; else edit">
+    <p>{{data!.userName}}</p>
+    <p>From: {{data!.cityFrom}}</p>
+    <p>To: {{data!.cityTo}}</p>
+    <p>When: {{data!.arrivingTime | date: 'dd.MM.yyyy'}}</p>
+    <p>Flight time: {{data!.arrivingTime | date: 'h:mm'}}</p>
+    <p>Max weight: {{data!.weight}}</p>
+    <p>Phone Number: {{data!.phoneNumber}}</p>
+    <div class="button-group">
+        <img src="../../../../assets/img/trash.png" alt="trash" class="button button-trash" (click)="deleteCard()">
+        <img src="../../../../assets/img/edit.png" alt="edit" class="button button-edit" (click)="toggleEdit()">
+    </div>
+  </ng-container>
+
+  <ng-template #edit>
+    <form (ngSubmit)="submit()" [formGroup]="formGroup" class="form">
+      <label class="label">
+        Weight
+        <input type="number" name="weight" formControlName="weight">
+      </label>
+      <label class="label">
+        Transport type
+        <ng-select
+          [items]="transportOptions"
+          bindLabel="label"
+          bindValue="value"
+          formControlName="transportType"
+          [clearable]="false">
+        </ng-select>
+      </label>
+      <label class="label">
+        Card type
+        <ng-select
+          [items]="cardTypeOptions"
+          bindLabel="label"
+          bindValue="value"
+          formControlName="cardType"
+          [clearable]="false">
+        </ng-select>
+      </label>
+      <label class="label">
+        From city
+        <ng-select
+          [items]="cities"
+          bindLabel="label"
+          bindValue="value"
+          formControlName="cityFrom"
+          [clearable]="false">
+        </ng-select>
+      </label>
+      <label class="label">
+        To city
+        <ng-select
+          [items]="cities"
+          bindLabel="label"
+          bindValue="value"
+          formControlName="cityTo"
+          [clearable]="false">
+        </ng-select>
+      </label>
+      <label class="label">
+        Arriving Time
+        <input type="datetime-local" name="arrivingTime" formControlName="arrivingTime">
+      </label>
+      <div class="button-group">
+        <a class="cancel-button" (click)="toggleEdit()">Cancel</a>
+        <div class="group">
+          <img src="../../../../assets/img/trash.png" alt="trash" class="button button-trash" (click)="deleteCard()">
+          <img src="../../../../assets/img/edit.png" alt="edit" class="button button-edit" (click)="submit()">
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>

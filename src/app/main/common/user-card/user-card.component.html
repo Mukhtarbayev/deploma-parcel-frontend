@@ -1,0 +1,8 @@
+<div class="card-body">
+  <p>{{data!.userName}}</p>
+  <p>From: {{data!.cityFrom}}</p>
+  <p>To: {{data!.cityTo}}</p>
+  <p>When: {{data!.arrivingTime | date: 'dd.MM.yyyy'}}</p>
+  <p>Flight time: {{data!.arrivingTime | date: 'h:mm'}}</p>
+</div>
+<button class="button" (click)="openDialog(data!)">More info</button>

@@ -1,0 +1,34 @@
+:host {
+  padding: 60px 81px;
+
+  display: block;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.new-card {
+  width: 365px;
+  height: 382px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
+  font-weight: 600;
+
+  color: white;
+  background-color: #838383;
+  border-radius: 36px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #6c6c6c;
+  }
+}
